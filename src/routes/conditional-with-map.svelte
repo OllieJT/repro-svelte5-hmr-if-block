@@ -7,11 +7,12 @@
 	import DisplayOrange, { type OrangeData } from "./display-orange.svelte";
 
 	const {data}:{data:FruitData} = $props()
-
-	const fruit_map = {
-		"apple": DisplayApple,
-		"orange": DisplayOrange
-	} satisfies Record<FruitData["type"], ConstructorOfATypedSvelteComponent>
 </script>
 
-<svelte:component this={fruit_map[data.type]} data={data} />
+<svelte:component
+	this={{
+		"apple": DisplayApple,
+		"orange": DisplayOrange
+	}[data.type]}
+	data={data as unknown as never}
+/>
