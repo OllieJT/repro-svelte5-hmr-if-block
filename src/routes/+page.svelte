@@ -8,21 +8,24 @@
 		{ type: "orange", name: "Mandarin" },
 		{ type: "apple", name: "Fuji" },
 		{ type: "orange", name: "Blood Orange" },
-
 	])
 
 </script>
 
 <h2>If Block</h2>
 <p>This uses an if block to conditionally render a component.</p>
-{#each fruits as fruit}
+<dl>
+	{#each fruits as fruit}
 	<ConditionalWithIf data={fruit} />
-{/each}
+	{/each}
+</dl>
 
 <hr />
 
 <h2>Component Map</h2>
 <p>This uses a component map and svelte:component element to conditionally render a component.</p>
-{#each fruits as fruit}
+<dl>
+	{#each fruits as fruit}
 	<ConditionalWithMap data={fruit} />
-{/each}
+	{/each}
+</dl>
